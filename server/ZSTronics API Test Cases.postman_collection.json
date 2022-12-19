@@ -1,0 +1,1221 @@
+{
+	"info": {
+		"_postman_id": "5a43d91c-3b6e-4514-9338-a0d952f0ed99",
+		"name": "ZSTronics API Test Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login API Test Cases",
+			"item": [
+				{
+					"name": "Successful login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ahmad\",\r\n    \"password\": \"98765\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"ahmad\",\r\n    \"password\": \"98765\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-XppmQSK8x6xOEmJ7IgJVmt7/MD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:28:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user was successfully logged-in.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Wrong Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ahmad\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Wrong Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"ahmad\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-f4JdAbLuNG17J+Ze9ykVR/7Amkc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:28:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Password!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Invalid User Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"abc\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid User Name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"abc\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-PuFZGbFdVksd6DA+Q6gxJfihjNc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:28:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Not found.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Register User API Test Cases",
+			"item": [
+				{
+					"name": "Successful Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ahmad ali\",\r\n    \"password\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"ahmad ali\",\r\n    \"password\": \"abc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-6cBPMV8yGkA4J3PR8PXJdfFxx+I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:30:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userName\": \"ahmad ali\",\n    \"password\": \"abc\",\n    \"isLoggedIn\": false,\n    \"createdAt\": \"2022-12-19T15:30:09.590Z\",\n    \"updatedAt\": \"2022-12-19T15:30:09.590Z\",\n    \"id\": \"63a0838115f93e109bd42602\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Already Registered",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ahmad ali\",\r\n    \"password\": \"abc1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Already Registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"ahmad ali\",\r\n    \"password\": \"abc1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-l6GeBOPe6jWtkiLo0CNMxez3dDs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:31:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Already Registered!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Invalid Input",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"\",\r\n    \"password\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"\",\r\n    \"password\": \"abc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-AgtMTtAoQwBWpaenltbASesUVSM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:32:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Content can not be empty!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get All Users API",
+			"item": [
+				{
+					"name": "Successful response for all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5606/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5606/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "502"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f6-s2dsdeGjwYQ5SdnydDdyfHlvJkA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:35:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userName\": \"ahmad\",\n        \"password\": \"98765\",\n        \"isLoggedIn\": true,\n        \"createdAt\": \"2022-12-18T19:25:51.684Z\",\n        \"updatedAt\": \"2022-12-19T15:28:30.282Z\",\n        \"id\": \"639f693f1570b76f228d67d9\"\n    },\n    {\n        \"userName\": \"ali\",\n        \"password\": \"1\",\n        \"isLoggedIn\": true,\n        \"createdAt\": \"2022-12-18T20:21:37.504Z\",\n        \"updatedAt\": \"2022-12-18T21:01:45.147Z\",\n        \"id\": \"639f7651539011f63118aec0\"\n    },\n    {\n        \"userName\": \"ahmad ali\",\n        \"password\": \"abc\",\n        \"isLoggedIn\": false,\n        \"createdAt\": \"2022-12-19T15:30:09.590Z\",\n        \"updatedAt\": \"2022-12-19T15:30:09.590Z\",\n        \"id\": \"63a0838115f93e109bd42602\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Delete User API",
+			"item": [
+				{
+					"name": "Successful Response",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5606/api/users/abc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"abc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5606/api/users/63a0838115f93e109bd42602",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"63a0838115f93e109bd42602"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-ED+uV7j4uiycHWADndxL+heYSrg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:37:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user was deleted successfully!\"\n}"
+						},
+						{
+							"name": "Invalid User ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5606/api/users/abc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"abc"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-opeAgfI8Zk1L0w6eD3hMaXJ5i/0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:37:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Could not delete user with id=abc\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Update APIs",
+			"item": [
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/639f7651539011f63118aec0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"639f7651539011f63118aec0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Respone",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/639f7651539011f63118aec0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"639f7651539011f63118aec0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-mEk/h+j4/l0hYjIEN/yTVn9MEB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:39:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user was updated successfully.\"\n}"
+						},
+						{
+							"name": "Invalid User ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/ali",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"ali"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-IlI2awAjAyxcm3+wREE48hxM/Kg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:40:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Error updating user with id=ali\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Logout API",
+			"item": [
+				{
+					"name": "Logout API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isLoggedIn\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5606/api/users/639f7651539011f63118aec0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"639f7651539011f63118aec0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful logout",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isLoggedIn\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/639f7651539011f63118aec0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"639f7651539011f63118aec0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-mEk/h+j4/l0hYjIEN/yTVn9MEB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:42:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user was updated successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get All User Activities",
+			"item": [
+				{
+					"name": "Get User Activities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5606/api/users/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5606",
+							"path": [
+								"api",
+								"users",
+								"activities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"ahmad\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5606/api/users/activities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"activities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1012-1gxB0CfAIZn2se2+23NU+zjquUI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:49:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:15:41.170Z\",\n        \"createdAt\": \"2022-12-19T13:15:41.184Z\",\n        \"updatedAt\": \"2022-12-19T13:15:41.184Z\",\n        \"id\": \"63a063fd2d237a84a5dc6896\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:18:32.215Z\",\n        \"createdAt\": \"2022-12-19T13:18:32.217Z\",\n        \"updatedAt\": \"2022-12-19T13:18:32.217Z\",\n        \"id\": \"63a064a82d237a84a5dc689a\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:21:36.310Z\",\n        \"createdAt\": \"2022-12-19T13:21:36.311Z\",\n        \"updatedAt\": \"2022-12-19T13:21:36.311Z\",\n        \"id\": \"63a065602d237a84a5dc689e\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:21:50.704Z\",\n        \"createdAt\": \"2022-12-19T13:21:50.705Z\",\n        \"updatedAt\": \"2022-12-19T13:21:50.705Z\",\n        \"id\": \"63a0656e2d237a84a5dc68a2\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:23.236Z\",\n        \"createdAt\": \"2022-12-19T13:23:23.237Z\",\n        \"updatedAt\": \"2022-12-19T13:23:23.237Z\",\n        \"id\": \"63a065cb2d237a84a5dc68a7\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:23:27.923Z\",\n        \"createdAt\": \"2022-12-19T13:23:27.924Z\",\n        \"updatedAt\": \"2022-12-19T13:23:27.924Z\",\n        \"id\": \"63a065cf2d237a84a5dc68aa\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:44.990Z\",\n        \"createdAt\": \"2022-12-19T13:23:44.990Z\",\n        \"updatedAt\": \"2022-12-19T13:23:44.990Z\",\n        \"id\": \"63a065e02d237a84a5dc68ae\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:49.419Z\",\n        \"createdAt\": \"2022-12-19T13:23:49.420Z\",\n        \"updatedAt\": \"2022-12-19T13:23:49.420Z\",\n        \"id\": \"63a065e52d237a84a5dc68b1\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:50.218Z\",\n        \"createdAt\": \"2022-12-19T13:23:50.219Z\",\n        \"updatedAt\": \"2022-12-19T13:23:50.219Z\",\n        \"id\": \"63a065e62d237a84a5dc68b4\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:50.834Z\",\n        \"createdAt\": \"2022-12-19T13:23:50.835Z\",\n        \"updatedAt\": \"2022-12-19T13:23:50.835Z\",\n        \"id\": \"63a065e62d237a84a5dc68b7\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"logoutTime\": \"2022-12-19T13:23:51.509Z\",\n        \"createdAt\": \"2022-12-19T13:23:51.509Z\",\n        \"updatedAt\": \"2022-12-19T13:23:51.509Z\",\n        \"id\": \"63a065e72d237a84a5dc68ba\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T13:27:27.031Z\",\n        \"createdAt\": \"2022-12-19T13:27:27.045Z\",\n        \"updatedAt\": \"2022-12-19T13:27:27.045Z\",\n        \"id\": \"63a066bf18574db535b66dc4\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:17:58.895Z\",\n        \"createdAt\": \"2022-12-19T15:17:58.910Z\",\n        \"updatedAt\": \"2022-12-19T15:17:58.910Z\",\n        \"id\": \"63a080a65937a4819ea372d6\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:18:59.462Z\",\n        \"createdAt\": \"2022-12-19T15:18:59.477Z\",\n        \"updatedAt\": \"2022-12-19T15:18:59.477Z\",\n        \"id\": \"63a080e39f60eda56a9e8eb1\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:20:27.270Z\",\n        \"createdAt\": \"2022-12-19T15:20:27.285Z\",\n        \"updatedAt\": \"2022-12-19T15:20:27.285Z\",\n        \"id\": \"63a0813b5686f0c6a8e2a58f\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:20:46.208Z\",\n        \"createdAt\": \"2022-12-19T15:20:46.223Z\",\n        \"updatedAt\": \"2022-12-19T15:20:46.223Z\",\n        \"id\": \"63a0814e7a0097a6ea1ea7eb\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:22:52.840Z\",\n        \"createdAt\": \"2022-12-19T15:22:52.854Z\",\n        \"updatedAt\": \"2022-12-19T15:22:52.854Z\",\n        \"id\": \"63a081cce8ea7565a6b2cfdb\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:23:59.134Z\",\n        \"createdAt\": \"2022-12-19T15:23:59.148Z\",\n        \"updatedAt\": \"2022-12-19T15:23:59.148Z\",\n        \"id\": \"63a0820f15f93e109bd425e7\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:24:00.038Z\",\n        \"createdAt\": \"2022-12-19T15:24:00.041Z\",\n        \"updatedAt\": \"2022-12-19T15:24:00.041Z\",\n        \"id\": \"63a0821015f93e109bd425eb\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:24:35.853Z\",\n        \"createdAt\": \"2022-12-19T15:24:35.856Z\",\n        \"updatedAt\": \"2022-12-19T15:24:35.856Z\",\n        \"id\": \"63a0823315f93e109bd425ef\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"invalidAttemptTime\": \"2022-12-19T15:25:31.624Z\",\n        \"createdAt\": \"2022-12-19T15:25:31.626Z\",\n        \"updatedAt\": \"2022-12-19T15:25:31.626Z\",\n        \"id\": \"63a0826b15f93e109bd425f3\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"loginTime\": \"2022-12-19T15:28:30.281Z\",\n        \"createdAt\": \"2022-12-19T15:28:30.283Z\",\n        \"updatedAt\": \"2022-12-19T15:28:30.283Z\",\n        \"id\": \"63a0831e15f93e109bd425f7\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"invalidAttemptTime\": \"2022-12-19T15:28:41.832Z\",\n        \"createdAt\": \"2022-12-19T15:28:41.833Z\",\n        \"updatedAt\": \"2022-12-19T15:28:41.833Z\",\n        \"id\": \"63a0832915f93e109bd425fb\"\n    },\n    {\n        \"userName\": \"ahmad\",\n        \"invalidAttemptTime\": \"2022-12-19T15:30:00.466Z\",\n        \"createdAt\": \"2022-12-19T15:30:00.468Z\",\n        \"updatedAt\": \"2022-12-19T15:30:00.468Z\",\n        \"id\": \"63a0837815f93e109bd425ff\"\n    }\n]"
+						},
+						{
+							"name": "Invalid User or empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5606/api/users/activities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5606",
+									"path": [
+										"api",
+										"users",
+										"activities"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-zIlTj0/HCiaiF/zQVXxiYSFBTpA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Dec 2022 15:53:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": " Cannot find user activities against specified user"
+						}
+					]
+				}
+			]
+		}
+	]
+}

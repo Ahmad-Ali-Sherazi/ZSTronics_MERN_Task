@@ -1,0 +1,62 @@
+Please share the underlying statement.
+
+
+
+Nodejs Assignment
+
+
+REST APIs services, MongoDB
+
+
+
+Description
+
+Your task is to implement following scenarios and use mongo database as a source of data for your application
+
+
+
+Implement following APIs:
+
+1. User (CRUD)
+
+2. Login/Logout
+
+3. Reset Password
+
+4. Get all registered Users
+
+
+
+React Assignment 
+
+
+
+1. Create login page
+
+2. Create register page
+
+3. Create dashboard page showing Users logged-in history/activity
+
+4. List registered users on dashboard
+
+
+
+Must have:
+
+1. Use mongodb and mongoose with express database to store REST API data 
+
+2. Add Test Cases to test your APIs 
+
+3. Information of mongodb connection should be stored in .env file 
+
+4. Upload the code to any Free Server (AWS is preferred) you can also use Heroku and share deployed url 
+
+5. Upload code to a public repo over github and share repo link.
+
+
+
+
+Submit your solution with-in 2 days, You can use online resources but you should solve this problem yourself.
+
+Activity means showing users 
+login/logout/password invalid activity
